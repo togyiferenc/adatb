@@ -40,4 +40,5 @@ CREATE TABLE SZAMLA (
     ugyfel INT REFERENCES UGYFEL(id),
     kelt DATE,
     teljesitve DATE
+    total INT
 );
