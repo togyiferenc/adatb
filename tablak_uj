@@ -1,0 +1,43 @@
+CREATE TABLE AUTO (
+    rendszam VARCHAR(10) PRIMARY KEY,
+    gyarto TEXT,
+    tipus TEXT,
+    szervizelve INT,
+    uzembe_helyezve DATE,
+    uzemkepes BOOLEAN,
+    foglalt BOOLEAN,
+    napidij INT
+);
+
+----------------------
+
+
+CREATE TABLE UGYFEL (
+    id SERIAL PRIMARY KEY,
+    nev TEXT,
+    utca TEXT,
+    hazszam TEXT,
+    varos TEXT,
+    megye TEXT,
+    szuletesi_datum DATE
+);
+
+--------------------------
+
+CREATE TABLE KOLCSONZES (
+    id SERIAL PRIMARY KEY,
+    rendszam VARCHAR(10) REFERENCES AUTO(rendszam),
+    ugyfel INT REFERENCES UGYFEL(id),
+    kezdes DATE,
+    vege DATE,
+    szamla INT REFERENCES SZAMLA(id),
+    szamlazva BOOLEAN
+);
+-------------------------
+
+CREATE TABLE SZAMLA (
+    id SERIAL PRIMARY KEY,
+    ugyfel INT REFERENCES UGYFEL(id),
+    kelt DATE,
+    teljesitve DATE
+);
