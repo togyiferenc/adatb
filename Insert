@@ -1,0 +1,28 @@
+INSERT INTO AUTO (rendszam, gyarto, tipus, szervizelve, uzembe_helyezve, uzemkepes, foglalt, napidij) VALUES
+('ABC123', 'Toyota', 'Corolla', 2, '2020-01-15', TRUE, FALSE, 15000),
+('DEF456', 'Honda', 'Civic', 1, '2019-07-20', TRUE, FALSE, 12000),
+('GHI789', 'Ford', 'Focus', 0, '2021-03-30', TRUE, TRUE, 13000),
+('JKL012', 'Tesla', 'Model S', 0, '2022-05-25', TRUE, FALSE, 20000),
+('MNO345', 'BMW', '320i', 3, '2018-11-10', TRUE, TRUE, 18000),
+('PQR123', 'Volkswagen', 'Golf', 2, '2019-04-12', TRUE, FALSE, 14000),
+('STU456', 'Audi', 'A4', 1, '2020-08-22', TRUE, TRUE, 16000),
+('VWX789', 'Skoda', 'Octavia', 0, '2021-01-15', TRUE, FALSE, 13000),
+('YZA012', 'Mazda', 'CX-5', 3, '2018-09-07', TRUE, TRUE, 15000),
+('BCD345', 'Nissan', 'Qashqai', 0, '2022-02-20', TRUE, FALSE, 13500),
+('XYZ678', 'Mercedes', 'C200', 0, '2021-08-19', TRUE, FALSE, 17000);
+
+
+---------------------------------------------------------------------
+INSERT INTO UGYFEL (nev, utca, hazszam, varos, megye, szuletesi_datum) VALUES
+('Kovács József', 'Fő utca', '15', 'Budapest', 'Budapest', '1978-05-20'),
+('Nagy Erzsébet', 'Kossuth Lajos utca', '42', 'Budapest', 'Budapest', '1985-11-12'),
+('Szabó István', 'Petőfi Sándor utca', '23', 'Budapest', 'Budapest', '1990-03-30'),
+('Tóth Marianna', 'Váci utca', '56', 'Budapest', 'Budapest', '1975-07-16'),
+('Varga Péter', 'Akácfa utca', '78', 'Debrecen', 'Hajdú-Bihar', '1969-02-14'),
+('Horváth Anna', 'Rákóczi út', '91', 'Szeged', 'Csongrád-Csanád', '1983-09-26'),
+('Balázs László', 'Klapka utca', '64', 'Pécs', 'Baranya', '1995-12-01'),
+('Farkas Gabriella', 'Kossuth tér', '37', 'Győr', 'Győr-Moson-Sopron', '1972-04-08'),
+('Molnár Csilla', 'Szent István körút', '15', 'Miskolc', 'Borsod-Abaúj-Zemplén', '1988-06-23'),
+('Orosz János', 'Ady Endre utca', '22', 'Székesfehérvár', 'Fejér', '1970-01-15');
+
+---------------------------------------------------------------------------
