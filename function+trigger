@@ -32,3 +32,59 @@ CREATE TRIGGER trigger_uj_szamla
 AFTER INSERT ON SZAMLA
 FOR EACH ROW
 EXECUTE FUNCTION uj_szamla();
+
+-------------------------------
+CREATE OR REPLACE FUNCTION total()
+RETURNS TRIGGER AS $$
+DECLARE
+    kolcsonzes_napok INT;
+    napi_dij INT;
+    osszesen INT;
+BEGIN
+
+    IF NEW.szamlazva THEN
+        
+        kolcsonzes_napok := NEW.vege - NEW.kezdes;
+
+        SELECT napidij INTO napi_dij FROM AUTO WHERE rendszam = NEW.rendszam;
+        
+        osszesen := kolcsonzes_napok * napi_dij;
+
+        UPDATE SZAMLA SET total = osszesen WHERE id = NEW.szamla;
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER  trigger_total
+AFTER INSERT OR UPDATE ON KOLCSONZES
+FOR EACH ROW
+EXECUTE FUNCTION total();
+
+
+
+CREATE OR REPLACE FUNCTION total()
+RETURNS TRIGGER AS $$
+DECLARE
+    kolcsonzes_napok INT;
+    napi_dij INT;
+    osszesen INT;
+BEGIN
+    IF NEW.szamlazva THEN
+
+        kolcsonzes_napok := NEW.vege - NEW.kezdes;
+
+        SELECT napidij INTO napi_dij FROM AUTO WHERE rendszam = NEW.rendszam;
+
+        osszesen := kolcsonzes_napok * napi_dij;
+
+        UPDATE SZAMLA 
+        SET total = osszesen, 
+            kelt = CURRENT_DATE
+        WHERE id = NEW.szamla;
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
