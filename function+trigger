@@ -88,3 +88,23 @@ BEGIN
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
+
+
+--------------------------------------------------------
+CREATE OR REPLACE FUNCTION update_auto_foglalt)
+RETURNS void AS $$
+BEGIN
+
+    UPDATE AUTO
+    SET foglalt = FALSE;
+
+    UPDATE AUTO
+    SET foglalt = TRUE
+    WHERE rendszam IN (
+        SELECT rendszam
+        FROM KOLCSONZES
+        WHERE kezdes <= CURRENT_DATE AND vege >= CURRENT_DATE
+    );
+END;
+$$ LANGUAGE plpgsql;
+----------------------------------------------------------
