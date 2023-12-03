@@ -1,0 +1,29 @@
+CREATE OR REPLACE FUNCTION eauto_berles(ugyfel_id INT, auto_rendszam VARCHAR, input_kezdes DATE, input_vege DATE)
+RETURNS TEXT AS $$
+DECLARE
+    auto_foglalt BOOLEAN;
+    auto_uzemkepes BOOLEAN;
+BEGIN
+    SELECT COUNT(*) > 0 INTO auto_foglalt
+    FROM KOLCSONZES
+    WHERE rendszam = auto_rendszam
+      AND NOT (vege < input_kezdes OR kezdes > input_vege);
+
+    IF auto_foglalt THEN
+        RETURN 'Az auto foglalt.';
+    END IF;
+
+    SELECT uzemkepes INTO auto_uzemkepes
+    FROM AUTO
+    WHERE rendszam = auto_rendszam;
+
+    IF NOT auto_uzemkepes THEN
+        RETURN 'Az auto nem uzemkepes.';
+    END IF;
+
+    INSERT INTO KOLCSONZES(ugyfel, rendszam, kezdes, vege)
+    VALUES (ugyfel_id, auto_rendszam, input_kezdes, input_vege);
+
+    RETURN 'A kolcsonzes sikeresen megtortent.';
+END;
+$$ LANGUAGE plpgsql;
