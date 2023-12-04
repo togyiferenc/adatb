@@ -23,7 +23,18 @@ INSERT INTO UGYFEL (nev, utca, hazszam, varos, megye, szuletesi_datum) VALUES
 ('Balázs László', 'Klapka utca', '64', 'Pécs', 'Baranya', '1995-12-01'),
 ('Farkas Gabriella', 'Kossuth tér', '37', 'Győr', 'Győr-Moson-Sopron', '1972-04-08'),
 ('Molnár Csilla', 'Szent István körút', '15', 'Miskolc', 'Borsod-Abaúj-Zemplén', '1988-06-23'),
-('Orosz János', 'Ady Endre utca', '22', 'Székesfehérvár', 'Fejér', '1970-01-15');
+('Orosz János', 'Ady Endre utca', '22', 'Székesfehérvár', 'Fejér', '1970-01-15'),
+('Kovács Béla', 'Fő utca', '15', 'Szeged', 'Csongrád-Csanád', '1985-03-12'),
+('Nagy Éva', 'Petőfi Sándor utca', '42', 'Pécs', 'Baranya', '1990-07-08'),
+('Szabó Péter', 'Kossuth Lajos utca', '23', 'Debrecen', 'Hajdú-Bihar', '1975-11-26'),
+('Tóth Anna', 'Váci utca', '56', 'Győr', 'Győr-Moson-Sopron', '1982-02-15'),
+('Varga Mária', 'Ady Endre utca', '78', 'Kecskemét', 'Bács-Kiskun', '1969-05-30'),
+('Horváth Gábor', 'Rákóczi út', '91', 'Miskolc', 'Borsod-Abaúj-Zemplén', '1977-08-21'),
+('Balázs László', 'Klapka utca', '64', 'Székesfehérvár', 'Fejér', '1983-12-03'),
+('Farkas Csilla', 'Attila utca', '37', 'Sopron', 'Győr-Moson-Sopron', '1991-09-19'),
+('Molnár István', 'Bethlen Gábor utca', '15', 'Eger', 'Heves', '1980-04-10'),
+('Orosz József', 'Dózsa György utca', '22', 'Budapest', 'Budapest', '1973-01-24');
+
 
 ---------------------------------------------------------------------------
 INSERT INTO KOLCSONZES (rendszam, ugyfel, kezdes, vege, szamlazva) VALUES
@@ -38,4 +49,11 @@ INSERT INTO KOLCSONZES (rendszam, ugyfel, kezdes, vege, szamlazva) VALUES
 ('JKL012', 3, '2023-12-11', '2024-02-20', FALSE),
 ('MNO345', 7, '2023-12-15', '2023-12-18', FALSE),
 ('PQR123', 6, '2023-12-20', '2024-01-25', FALSE),
+('ABC123', 1, '2023-01-01', '2023-01-07', FALSE),
+('DEF456', 2, '2023-01-15', '2023-01-22', FALSE),
+('GHI789', 3, '2023-02-01', '2023-02-10', FALSE),
+('JKL012', 4, '2023-02-20', '2023-02-28', FALSE),
+('MNO345', 5, '2023-03-05', '2023-03-12', FALSE),
+('PQR123', 6, '2023-03-15', '2023-03-22', FALSE),
+('STU456', 7, '2023-04-01', '2023-04-08', FALSE),
 
