@@ -1,0 +1,36 @@
+CREATE TABLE ugyfel_particionalt (
+    id SERIAL,
+    nev TEXT,
+    utca TEXT,
+    hazszam TEXT,
+    varos TEXT,
+    megye TEXT NOT NULL,
+    szuletesi_datum DATE
+) PARTITION BY LIST (megye);
+
+--------------------------------
+
+CREATE TABLE ugyfel_particionalt_bacs PARTITION OF ugyfel_particionalt FOR VALUES IN ('Bács-Kiskun');
+CREATE TABLE ugyfel_particionalt_baranya PARTITION OF ugyfel_particionalt FOR VALUES IN ('Baranya');
+CREATE TABLE ugyfel_particionalt_bekes PARTITION OF ugyfel_particionalt FOR VALUES IN ('Békés');
+CREATE TABLE ugyfel_particionalt_borsod PARTITION OF ugyfel_particionalt FOR VALUES IN ('Borsod-Abaúj-Zemplén');
+CREATE TABLE ugyfel_particionalt_csongrad PARTITION OF ugyfel_particionalt FOR VALUES IN ('Csongrád-Csanád');
+CREATE TABLE ugyfel_particionalt_fejer PARTITION OF ugyfel_particionalt FOR VALUES IN ('Fejér');
+CREATE TABLE ugyfel_particionalt_gyor PARTITION OF ugyfel_particionalt FOR VALUES IN ('Győr-Moson-Sopron');
+CREATE TABLE ugyfel_particionalt_hajdu PARTITION OF ugyfel_particionalt FOR VALUES IN ('Hajdú-Bihar');
+CREATE TABLE ugyfel_particionalt_heves PARTITION OF ugyfel_particionalt FOR VALUES IN ('Heves');
+CREATE TABLE ugyfel_particionalt_jasz PARTITION OF ugyfel_particionalt FOR VALUES IN ('Jász-Nagykun-Szolnok');
+CREATE TABLE ugyfel_particionalt_komarom PARTITION OF ugyfel_particionalt FOR VALUES IN ('Komárom-Esztergom');
+CREATE TABLE ugyfel_particionalt_nograd PARTITION OF ugyfel_particionalt FOR VALUES IN ('Nógrád');
+CREATE TABLE ugyfel_particionalt_pest PARTITION OF ugyfel_particionalt FOR VALUES IN ('Pest');
+CREATE TABLE ugyfel_particionalt_somogy PARTITION OF ugyfel_particionalt FOR VALUES IN ('Somogy');
+CREATE TABLE ugyfel_particionalt_szabolcs PARTITION OF ugyfel_particionalt FOR VALUES IN ('Szabolcs-Szatmár-Bereg');
+CREATE TABLE ugyfel_particionalt_tolna PARTITION OF ugyfel_particionalt FOR VALUES IN ('Tolna');
+CREATE TABLE ugyfel_particionalt_vas PARTITION OF ugyfel_particionalt FOR VALUES IN ('Vas');
+CREATE TABLE ugyfel_particionalt_veszprem PARTITION OF ugyfel_particionalt FOR VALUES IN ('Veszprém');
+CREATE TABLE ugyfel_particionalt_zala PARTITION OF ugyfel_particionalt FOR VALUES IN ('Zala');
+CREATE TABLE ugyfel_particionalt_budapest PARTITION OF ugyfel_particionalt FOR VALUES IN ('Budapest');
+
+----------------------------
+
+INSERT INTO ugyfel_particionalt SELECT * FROM ugyfel;
