@@ -4,3 +4,12 @@ JOIN szamla s ON s.ugyfel = u.id
 JOIN kolcsonzes k ON k.ugyfel = u.id
 WHERE s.total > 100000
 AND k.vege < '2023-11-21';
+---------
+
+SELECT COUNT(*)
+FROM KOLCSONZES k
+JOIN AUTO a ON k.rendszam = a.rendszam
+JOIN UGYFEL u ON k.ugyfel = u.id
+WHERE EXTRACT(YEAR FROM k.kezdes) = 2023
+AND a.gyarto = 'MERCEDES'
+AND u.megye = 'Budapest';
