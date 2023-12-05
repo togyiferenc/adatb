@@ -144,4 +144,29 @@ BEGIN
 END;
 $function$
 ;
+
+-----------------------
+Ügyfelek által kölcsönzött autók számának és a kölcsönzések összértékének összesítése
+-----------------------
+
+	CREATE OR REPLACE FUNCTION ugyfel_kolcsonzes_jelentes()
+	RETURNS TABLE(ugyfel_id INT, kolcsonzesek_szama BIGINT, teljes_osszeg BIGINT) AS
+	$$
+	BEGIN
+	    RETURN QUERY 
+	    SELECT 
+	        u.id, 
+	        COUNT(k.id) AS kolcsonzesek_szama, 
+	        SUM(s.total) AS teljes_osszeg
+	    FROM 
+	        UGYFEL u
+	    JOIN 
+	        KOLCSONZES k ON u.id = k.ugyfel
+	    JOIN 
+	        SZAMLA s ON k.szamla = s.id
+	    GROUP BY 
+	        u.id;
+	END;
+	$$ LANGUAGE plpgsql;
+
  
