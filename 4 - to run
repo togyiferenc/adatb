@@ -12,6 +12,23 @@ SELECT auto_berles(9, 'STU456', '2023-12-01', '2023-12-27');
 SELECT auto_berles(7, 'GHI789', '2023-11-01', '2024-05-05');
 SELECT auto_berles(5, 'DEF456', '2023-12-27', '2023-12-28');
 SELECT auto_berles(4, 'YZA012', '2023-11-01', '2023-12-27');
+SELECT auto_berles(3, 'XYZ678', '2023-11-01', '2024-05-05');
+SELECT auto_berles(12, 'DEF456', '2024-04-10', '2024-04-15');
+SELECT auto_berles(11, 'ABC123', '2022-12-01', '2022-12-27');
+SELECT auto_berles(13, 'BCD345', '2022-11-01', '2023-05-05');
+SELECT auto_berles(18, 'XYZ678', '2022-12-10', '2022-12-15');
+SELECT auto_berles(19, 'STU456', '2022-12-01', '2022-12-27');
+SELECT auto_berles(17, 'GHI789', '2022-11-01', '2022-05-05');
+SELECT auto_berles(15, 'BCD345', '2022-11-27', '2022-12-28');
+SELECT auto_berles(14, 'XYZ678', '2022-11-01', '2022-12-27');
+SELECT auto_berles(11, 'ABC123', '2021-12-01', '2021-12-27');
+SELECT auto_berles(13, 'BCD345', '2021-11-01', '2022-05-05');
+SELECT auto_berles(18, 'XYZ678', '2021-12-10', '2021-12-15');
+SELECT auto_berles(19, 'STU456', '2021-12-01', '2021-12-27');
+SELECT auto_berles(17, 'GHI789', '2021-11-01', '2021-05-05');
+SELECT auto_berles(15, 'BCD345', '2021-11-27', '2021-12-28');
+SELECT auto_berles(14, 'XYZ678', '2021-11-01', '2021-12-27');
+
 
 
 ugyfel_kolcsonzes_jelentes();
