@@ -55,5 +55,5 @@ INSERT INTO KOLCSONZES (rendszam, ugyfel, kezdes, vege, szamlazva) VALUES
 ('JKL012', 4, '2023-02-20', '2023-02-28', FALSE),
 ('MNO345', 5, '2023-03-05', '2023-03-12', FALSE),
 ('PQR123', 6, '2023-03-15', '2023-03-22', FALSE),
-('STU456', 7, '2023-04-01', '2023-04-08', FALSE),
+('STU456', 7, '2023-04-01', '2023-04-08', FALSE);
 
