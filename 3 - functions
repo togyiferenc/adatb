@@ -72,7 +72,7 @@ Számla végösszege -> amint a kölcsönzés befejeződött (számlázva=true)
 	    or
 	update
 	    on
-	    public.kolcsonzes for each row execute function total()
+	    public.kolcsonzes for each row execute function total();
 
 -------
 Új számla
@@ -97,7 +97,7 @@ Számla végösszege -> amint a kölcsönzés befejeződött (számlázva=true)
 	create trigger trigger_uj_szamla after
 	insert
 	    on
-	    public.szamla for each row execute function uj_szamla()
+	    public.szamla for each row execute function uj_szamla();
  
 -------
 Új kölcsönzés
@@ -113,37 +113,37 @@ Számla végösszege -> amint a kölcsönzés befejeződött (számlázva=true)
 	    VALUES (NEW.ugyfel);
 	    RETURN NEW;
 	END;
-	$function$
+	$function$;
  
      +++ trigger +++
 
 	 create trigger trigger_uj_kolcsonzes after
 	insert
 	    on
-	    public.kolcsonzes for each row execute function uj_kolcsonzes()
+	    public.kolcsonzes for each row execute function uj_kolcsonzes();
 
 -----
  Foglalt - frissíti az AUTO táblában az éppen kölcsönzött járműveket
 -----
-CREATE OR REPLACE FUNCTION public.update_auto_foglalt()
- RETURNS void
- LANGUAGE plpgsql
-AS $function$
-BEGIN
-
-    UPDATE AUTO
-    SET foglalt = FALSE;
-
-    UPDATE AUTO
-    SET foglalt = TRUE
-    WHERE rendszam IN (
-        SELECT rendszam
-        FROM KOLCSONZES
-        WHERE kezdes <= CURRENT_DATE AND vege >= CURRENT_DATE
-    );
-END;
-$function$
-;
+	CREATE OR REPLACE FUNCTION public.update_auto_foglalt()
+	 RETURNS void
+	 LANGUAGE plpgsql
+	AS $function$
+	BEGIN
+	
+	    UPDATE AUTO
+	    SET foglalt = FALSE;
+	
+	    UPDATE AUTO
+	    SET foglalt = TRUE
+	    WHERE rendszam IN (
+	        SELECT rendszam
+	        FROM KOLCSONZES
+	        WHERE kezdes <= CURRENT_DATE AND vege >= CURRENT_DATE
+	    );
+	END;
+	$function$
+	;
 
 -----------------------
 Ügyfelek által kölcsönzött autók számának és a kölcsönzések összértékének összesítése
