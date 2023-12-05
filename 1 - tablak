@@ -10,8 +10,6 @@ CREATE TABLE AUTO (
 );
 
 ----------------------
-
-
 CREATE TABLE UGYFEL (
     id SERIAL PRIMARY KEY,
     nev TEXT,
@@ -21,7 +19,14 @@ CREATE TABLE UGYFEL (
     megye TEXT,
     szuletesi_datum DATE
 );
-
+----------------------------
+CREATE TABLE SZAMLA (
+    id SERIAL PRIMARY KEY,
+    ugyfel INT REFERENCES UGYFEL(id),
+    kelt DATE,
+    teljesitve DATE,
+    total INT
+);
 --------------------------
 
 CREATE TABLE KOLCSONZES (
@@ -33,12 +38,5 @@ CREATE TABLE KOLCSONZES (
     szamla INT REFERENCES SZAMLA(id),
     szamlazva BOOLEAN
 );
--------------------------
 
-CREATE TABLE SZAMLA (
-    id SERIAL PRIMARY KEY,
-    ugyfel INT REFERENCES UGYFEL(id),
-    kelt DATE,
-    teljesitve DATE
-    total INT
-);
+
