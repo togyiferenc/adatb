@@ -1,3 +1,17 @@
 select update_auto_foglalt();
 
 
+SELECT auto_berles(3, 'GHI789', '2023-11-01', '2024-05-05');
+SELECT auto_berles(2, 'DEF456', '2024-04-10', '2024-04-15');
+SELECT auto_berles(1, 'ABC123', '2023-12-01', '2023-12-27');
+SELECT auto_berles(3, 'GHI789', '2023-11-01', '2024-05-05');
+SELECT auto_berles(8, 'GHI789', '2023-12-10', '2023-12-15');
+SELECT auto_berles(9, 'STU456', '2023-12-01', '2023-12-27');
+SELECT auto_berles(7, 'GHI789', '2023-11-01', '2024-05-05');
+SELECT auto_berles(5, 'DEF456', '2023-12-27', '2023-12-28');
+SELECT auto_berles(4, 'YZA012', '2023-11-01', '2023-12-27');
+
+
+
+ugyfel_kolcsonzes_jelentes()
+
