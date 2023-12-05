@@ -1,5 +1,5 @@
 INSERT INTO AUTO (rendszam, gyarto, tipus, szervizelve, uzembe_helyezve, uzemkepes, foglalt, napidij) VALUES
-('ABC123', 'Toyota', 'Corolla', 2, '2020-01-15', TRUE, FALSE, 15000),
+('ABC123', 'Mercedes, 'B180', 2, '2020-01-15', TRUE, FALSE, 15000),
 ('DEF456', 'Honda', 'Civic', 1, '2019-07-20', TRUE, FALSE, 12000),
 ('GHI789', 'Ford', 'Focus', 0, '2021-03-30', TRUE, TRUE, 13000),
 ('JKL012', 'Tesla', 'Model S', 0, '2022-05-25', TRUE, FALSE, 20000),
