@@ -1,3 +1,4 @@
+
 SELECT COUNT(DISTINCT u.id)
 FROM ugyfel u 
 JOIN szamla s ON s.ugyfel = u.id
