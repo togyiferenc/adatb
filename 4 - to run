@@ -1,5 +1,7 @@
 select update_auto_foglalt();
 
+select update_szamlazva();
+
 
 SELECT auto_berles(3, 'GHI789', '2023-11-01', '2024-05-05');
 SELECT auto_berles(2, 'DEF456', '2024-04-10', '2024-04-15');
@@ -12,6 +14,4 @@ SELECT auto_berles(5, 'DEF456', '2023-12-27', '2023-12-28');
 SELECT auto_berles(4, 'YZA012', '2023-11-01', '2023-12-27');
 
 
-
-ugyfel_kolcsonzes_jelentes()
-
+ugyfel_kolcsonzes_jelentes();
