@@ -169,4 +169,18 @@ Számla végösszege -> amint a kölcsönzés befejeződött (számlázva=true)
 	END;
 	$$ LANGUAGE plpgsql;
 
+--------------------
+Lezárt kölcsönzések frissítése
+--------------------
+CREATE OR REPLACE FUNCTION update_szamlazva()
+RETURNS void AS
+$$
+BEGIN
+    UPDATE KOLCSONZES
+    SET szamlazva = true
+    WHERE vege < CURRENT_DATE;
+END;
+$$ LANGUAGE plpgsql;
+
+
  
