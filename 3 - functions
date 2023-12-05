@@ -2,7 +2,7 @@
 Auto bérlés -megadott input alapján létrehoz egy kölcsönzés
 ----
 
-	CREATE OR REPLACE FUNCTION eauto_berles(ugyfel_id INT, auto_rendszam VARCHAR, input_kezdes DATE, input_vege DATE)
+	CREATE OR REPLACE FUNCTION auto_berles(ugyfel_id INT, auto_rendszam VARCHAR, input_kezdes DATE, input_vege DATE)
 	RETURNS TEXT AS $$
 	DECLARE
 	    auto_foglalt BOOLEAN;
